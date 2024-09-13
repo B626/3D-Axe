@@ -7,6 +7,7 @@ import {
 } from "@react-three/drei";
 import { Suspense } from "react";
 
+
 function App() {
   return (
     <>
