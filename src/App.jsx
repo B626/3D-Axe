@@ -6,7 +6,6 @@ import {
   ScrollControls,
 } from "@react-three/drei";
 import { Suspense } from "react";
-// gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 function App() {
   return (
