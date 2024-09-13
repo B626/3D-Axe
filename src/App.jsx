@@ -1,27 +1,18 @@
-import { Canvas, useFrame } from "@react-three/fiber";
 import "./App.css";
 import { Axe } from "./components/Axe";
-// import gsap from "gsap";
-// import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
+
 import {
-  Environment,
-  OrbitControls,
   Scroll,
   ScrollControls,
-  Text,
   useVideoTexture,
 } from "@react-three/drei";
-import { Suspense, useEffect, useLayoutEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-
+import { Suspense } from "react";
 // gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 function App() {
   const texture = useVideoTexture("/bg.mp4")
   return (
     <>
-      {/* <Environment preset="warehouse" /> */}
       <ambientLight color="green" intensity={60} />
       <pointLight position={[2, 3, 7]} intensity={20} color={"white"} />
       <color attach="background" args={["#111"]} />
@@ -121,10 +112,6 @@ function App() {
           </div>
         </Scroll>
       </ScrollControls>
-      {/* <mesh>
-        <planeGeometry args={[2, 2, 2]} />
-        <meshBasicMaterial map={texture} toneMapped={false} />
-      </mesh> */}
     </>
   );
 }
