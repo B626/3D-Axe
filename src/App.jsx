@@ -4,13 +4,11 @@ import { Axe } from "./components/Axe";
 import {
   Scroll,
   ScrollControls,
-  useVideoTexture,
 } from "@react-three/drei";
 import { Suspense } from "react";
 // gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 function App() {
-  const texture = useVideoTexture("/bg.mp4")
   return (
     <>
       <ambientLight color="green" intensity={60} />
