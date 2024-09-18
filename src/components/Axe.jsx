@@ -95,6 +95,7 @@ export function Axe(props) {
       rotation={[-0.2, -2.49, 0]}
       ref={axe}
     >
+      
       <group>
         <group rotation={[-Math.PI, 0, 0]} scale={0.01} ref={axeScale}>
           <mesh

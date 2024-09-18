@@ -2,6 +2,7 @@ import "./App.css";
 import { Axe } from "./components/Axe";
 
 import {
+  Environment,
   Scroll,
   ScrollControls,
 } from "@react-three/drei";
@@ -11,8 +12,8 @@ import { Suspense } from "react";
 function App() {
   return (
     <>
-      <ambientLight color="green" intensity={60} />
-      <pointLight position={[2, 3, 7]} intensity={20} color={"white"} />
+      <ambientLight color="green" intensity={9} />
+      {/* <pointLight position={[2, 3, 7]} intensity={10} color={"white"} /> */}
       <color attach="background" args={["#111"]} />
       <ScrollControls pages={6} damping={0.3} distance={1}>
         <Suspense fallback={null}>
