@@ -7,10 +7,6 @@ import { Canvas } from '@react-three/fiber'
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <Canvas>
         <App />
-      </Canvas>
-    </BrowserRouter>
   </StrictMode>
 );

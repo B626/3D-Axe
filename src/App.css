@@ -12,3 +12,21 @@ body, html, canvas, #root{
   -ms-user-select: none;
   user-select: none;
 }
+
+.App{
+  position: relative;
+}
+
+.canvas-container{
+  position: relative;
+  z-index: 3;
+}
+
+.canvas-bg{
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
