@@ -3,10 +3,11 @@ import "./App.css";
 import { Axe } from "./components/Axe";
 
 import {
-  Environment,
+  Billboard,
   Image,
   Scroll,
   ScrollControls,
+  Sparkles,
 } from "@react-three/drei";
 import { Suspense } from "react";
 
@@ -16,16 +17,27 @@ function App() {
     <div className="App">
       <div className="canvas-container">
         <Canvas>
-          <Image url="/bg.jpeg" scale={10} />
-          <ambientLight color="green" intensity={9} />
+          <ambientLight color="green" intensity={30} />
           <pointLight position={[2, 3, 7]} intensity={10} color={"white"} />
           <color attach="background" args={["#111"]} />
+          <Sparkles
+            count={300} scale={7}
+          />
           <ScrollControls pages={6} damping={0.3} distance={1}>
             <Suspense fallback={null}>
               <Axe scale={2} />
             </Suspense>
-            <Scroll html style={{ width: "100%" }}>
-              <div className="relative h-[600vh]">
+            <Billboard
+              follow={true}
+              lockX={false}
+              lockY={false}
+              lockZ={false} // Lock the rotation on the z axis (default=false)
+            >
+              <Image url="/bg2.jpg" scale={16}/>
+            </Billboard>
+            <Scroll html style={{ width: "100%", position: "relative" }}>
+              {/* <img src="/bg.jpeg" className="canvas-bg" alt="" /> */}
+              <div className="relative h-[600vh] canvas-content">
                 <main className="flex flex-col relative min-h-[500vh]">
                   <section className="h-[100vh] w-[100vw] flex items-end justify-center mb-[1300px]">
                     <div className="pb-[100px]">
@@ -120,7 +132,6 @@ function App() {
           </ScrollControls>
         </Canvas>
       </div>
-      <img src="/bg.jpeg" className="canvas-bg" alt="" />
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import React, { useRef, useLayoutEffect } from "react";
-import { useScroll, useGLTF, GradientTexture} from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useScroll, useGLTF, GradientTexture, Loader } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
 import { folder, useControls } from "leva";
 import gsap from "gsap";
-import { OrbitControls } from "three-stdlib";
+import { KTX2Loader } from "three/examples/jsm/loaders/KTX2Loader";
 
 export function Axe(props) {
   // const {
@@ -41,7 +41,25 @@ export function Axe(props) {
   //     value: 0.01,
   //   },
   // });
+  // const gl = useThree((state) => state.gl)
+  // const { nodes, materials } = useGLTF("/transformed/free_axe_sylvaxe_ktx.glb", undefined, undefined,
+  //   (loader) => {
+  //     const ktx2Loader = new KTX2Loader()
+  //     // ktx2Loader.setTranscoderPath("https://cdn.jsdelivr.net/gh/pmndrs/drei-assets/basis/")
+  //     ktx2Loader.setTranscoderPath(
+  //       "https://github.com/pmndrs/drei-assets/tree/master/basis/"
+  //     );
+
+  //     // ktx2Loader.setTranscoderPath(
+  //     //   "https://cdn.jsdelivr.net/npm/super-three@0.141.0/examples/js/libs/basis/"
+  //     // );
+  //     ktx2Loader.detectSupport(gl)
+  //     loader.setKTX2Loader(this.ktx2Loader)
+  //   }
+  // );
+
   const { nodes, materials } = useGLTF("/free_axe_sylvaxe.glb");
+
   const axe = useRef();
   const axeScale = useRef();
   const scroll = useScroll();
@@ -95,7 +113,6 @@ export function Axe(props) {
       rotation={[-0.2, -2.49, 0]}
       ref={axe}
     >
-      
       <group>
         <group rotation={[-Math.PI, 0, 0]} scale={0.01} ref={axeScale}>
           <mesh
